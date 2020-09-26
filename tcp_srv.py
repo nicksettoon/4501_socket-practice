@@ -4,7 +4,7 @@ def start():
     #enters UDP server mode
     srvPort = 12000
 
-    srvSocket = socket(AF_INET, SOCK_DGRAM)
+    srvSocket = socket(AF_INET, SOCK_STREAM)
     srvSocket.bind(("", srvPort))
     srvSocket.listen(1)
     print("Server is waiting for connection.\n")
