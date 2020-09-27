@@ -10,6 +10,7 @@ def start():
     while True:
         print("Server is waiting for packets.\n")
         mess, cAddr = srvSocket.recvfrom(2048)
+        print("client addr: ", cAddr, "\n")
         mess = mess.decode()
 
         if mess == "quit":

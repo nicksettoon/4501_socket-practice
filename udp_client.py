@@ -7,6 +7,7 @@ def start():
     srvPort = 12000
 
     cSocket = socket(AF_INET, SOCK_DGRAM)
+    cSocket.bind(("", 5432))
 
     while True:
         mess = input("\nWhat sentence would you like capitalized?\n")
