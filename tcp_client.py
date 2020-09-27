@@ -3,7 +3,8 @@ from socket import *
 def start():
     #enters client TCP mode
 
-    srvName = input('\nEnter the domain name of the server: ')
+    # srvName = input('\nEnter the domain name of the server: ')
+    srvName = "settoon.info"
     srvPort = 12000
 
     cSocket = socket(AF_INET, SOCK_STREAM)
@@ -12,7 +13,7 @@ def start():
     while True:
         sent = input("\nWhat sentence would you like capitalized?\n")
 
-        if sent == "quit":
+        if sent == "back":
             print("Termination requested.")
             break
 

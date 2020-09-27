@@ -9,19 +9,21 @@ if __name__ == "__main__":
     
     while True:
         mode = input("Which mode do you want?\n1. UDP\n2. TCP\nPlease input 1 or 2: ")
+        prot = udpc
 
         if int(mode) == 1:
             if args[1] == "-s":
-                udps.start()
-            elif args[1] == "-c":
-                udpc.start()
+                prot = udps
         elif int(mode) == 2:
             if args[1] == "-s":
-                tcps.start()
+                prot = tcps
             elif args[1] == "-c":
-                tcpc.start()
+                prot = tcpc
         elif mode == "quit":
             print("Goodbye.")
             break
         else:
             print("Invalid input, try again please.")
+
+        if prot.start() is False:
+            break

@@ -16,12 +16,12 @@ def start():
 
         if sent == "end":
             clientConnSocket.close()
-            break
+            return True
         elif sent == "quit":
             print("Client requested termination.")
             clientConnSocket.close()
             srvSocket.close()
-            break
+            return False
 
         print("Server received: \n", sent)
 

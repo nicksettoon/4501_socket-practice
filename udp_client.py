@@ -3,16 +3,18 @@ from socket import *
 def start():
     #enters client UDP mode
 
-    srvName = input('\nEnter the domain name of the server: ')
+    # srvName = input('\nEnter the domain name of the server: ')
+    srvName = "settoon.info"
     srvPort = 12000
 
     cSocket = socket(AF_INET, SOCK_DGRAM)
-    cSocket.bind(("", 5432))
+    # cSocket.bind(('', 2515))
 
     while True:
+        # print(cSocket.getsockname())
         mess = input("\nWhat sentence would you like capitalized?\n")
 
-        if mess == "quit":
+        if mess == "back":
             print("Termination requested.")
             break
 
