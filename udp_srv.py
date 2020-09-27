@@ -15,6 +15,7 @@ def start():
 
         if mess == "quit":
             print("Client requested termination.")
+            srvSocket.sendto("closing".encode(), cAddr)
             srvSocket.close()
             return False
 

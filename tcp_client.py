@@ -14,12 +14,16 @@ def start():
         sent = input("\nWhat sentence would you like capitalized?\n")
 
         if sent == "back":
-            print("Termination requested.")
+            print("Going to previous menu.")
             break
 
         cSocket.send(sent.encode())
         modSent = cSocket.recv(1024)
 
-        print("Server returned: ", modSent.decode(), "\n")
+        recv = modSent.decode()
+        # if recv == "closing":
+        #     break
+
+        print("Server returned: ", recv, "\n")
         
     cSocket.close()

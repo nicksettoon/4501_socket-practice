@@ -15,12 +15,16 @@ def start():
         mess = input("\nWhat sentence would you like capitalized?\n")
 
         if mess == "back":
-            print("Termination requested.")
+            print("Going to previous menu.")
             break
 
         cSocket.sendto(mess.encode(), (srvName, srvPort))
         modMess, srvAddr = cSocket.recvfrom(2048)
 
-        print(modMess.decode())
+        modMess = modMess.decode()
+        if modMess == "closing":
+            break
+
+        print(modMess)
         
     cSocket.close()
