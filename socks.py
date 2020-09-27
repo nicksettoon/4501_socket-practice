@@ -10,12 +10,12 @@ if __name__ == "__main__":
     while True:
         mode = input("Which mode do you want?\n1. UDP\n2. TCP\nPlease input 1 or 2: ")
 
-        if mode == "1":
+        if int(mode) == 1:
             if args[1] == "-s":
                 udps.start()
             elif args[1] == "-c":
                 udpc.start()
-        elif mode == "2":
+        elif int(mode) == 2:
             if args[1] == "-s":
                 tcps.start()
             elif args[1] == "-c":
