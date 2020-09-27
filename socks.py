@@ -15,13 +15,13 @@ if __name__ == "__main__":
                 udps.start()
             elif args[1] == "-c":
                 udpc.start()
-            break
-
         elif mode == "2":
             if args[1] == "-s":
                 tcps.start()
             elif args[1] == "-c":
                 tcpc.start()
+        elif mode == "quit":
+            print("Goodbye.")
             break
         else:
             print("Invalid input, try again please.")
