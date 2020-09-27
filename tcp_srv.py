@@ -8,10 +8,9 @@ def start():
     srvSocket.bind(("", srvPort))
     srvSocket.listen(1)
     print("Server is waiting for connection.\n")
+    clientConnSocket, cAddr = srvSocket.accept()
 
     while True:
-        clientConnSocket, cAddr = srvSocket.accept()
-
         print("Server is waiting for packets.\n")
         sent = clientConnSocket.recv(1024).decode()
 
