@@ -18,7 +18,7 @@ def start():
 
         print("Server received: \n", mess.decode())
 
-        modMess = mess.decode.upper()
+        modMess = mess.upper()
 
         print("Sending: \n", modMess)
 
