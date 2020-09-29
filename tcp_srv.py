@@ -13,7 +13,7 @@ def start():
     while True:
         print("Server is waiting for packets.\n")
         sent = clientConnSocket.recv(1024).decode()
-        if sent is None:
+        if sent == '':
             break
 
         if sent == "end":
